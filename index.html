@@ -32,28 +32,21 @@
   <body>
     <!-- Beginning Box Shadow -->
     <div class="body-container">
-      <div class="box-shadow"></div>
-      <!-- Image Feature -->
-      <section class="picture desktop">
+      <div class="dress">
+        <!-- Image Feature -->
         <img
-          id="picture"
-          src="/image-product-desktop.jpg"
+          class="picture"
+          srcset="
+            ./images/image-product-desktop.jpg 600w,
+            ./images/image-product-mobile.jpg  686w
+          "
+          sizes="(min-width: 600px) 600,
+          686px"
           alt="desktop perfume"
           title="Chanel Perfume"
-          width="360px"
-          height="540px"
         />
-      </section>
 
-      <section class="mobile">
-        <img
-          src="/image-product-mobile.jpg"
-          alt="mobile perfume"
-          class="mobile"
-        />
-      </section>
-      <!-- Description Selected -->
-      <section id="page">
+        <!-- Description Selected -->
         <div class="description">
           <h4>Perfume</h4>
           <h1>GABRIELLE ESSENCE EAU DE PARFUM</h1>
@@ -75,9 +68,9 @@
             <span class="cart">Add to cart</span>
           </button>
         </div>
-      </section>
+      </div>
     </div>
 
-    <div id="anchor">Coded by <a href="#">Keshon D. Bowman</a>.</div>
+    <!-- <div id="anchor">Coded by <a href="#">Keshon D. Bowman</a>.</div> -->
   </body>
 </html>
