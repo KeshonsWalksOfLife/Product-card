@@ -3,7 +3,7 @@
   --secondary-color: #ddc290;
   --linear-color: #fff;
 }
-
+/* Applies styles to width 620px or less*/
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +27,7 @@ body {
   background-color: var(--primary-color);
   margin: 20px auto;
 }
-
+/* Applies styles to width 620px or greater*/
 @media (min-width: 620px) {
   .body-container {
     background-color: red;
