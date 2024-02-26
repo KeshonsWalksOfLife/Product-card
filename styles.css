@@ -1,133 +1,117 @@
+/* Design Colors I Am Working With */
 :root {
     --primary-color: #5060ED;
     --secondary-color: #DDC290;
     --linear-color: #fff;
 }
-
+/* I Need All The Space I Can Get */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
 }
-
-
+/* Give Me The Whole Body */
+body {
+    width: 100%;
+    height: 100vh;
+}
+/* I am working from Phones to Desktops, First Thing First, Getting Everything in the middle */
 .body-container {
-    width: 72vw;
-    height: 88vh;
-    margin-top: 3rem;
-    margin-left: 17em;
-    background: linear-gradient(180deg, 
-    var(--primary-color),
-    var(--linear-color));
-    z-index: 1;
+    min-height: 100%;    
+    display: flex;
+    width: 100%;
 }
-
+/* The box shadow is behind the container rule, due to opacity covering whole page  */
 .box-shadow {
-    width: 56dvw;
-    height: 64lvh;
+    width: 100%;
     background: linear-gradient( to top, var(--secondary-color),
     rgba(250,250,250,0.1), rgba(250,250,250,0.2));
-    opacity: 0.6;
-    position: relative; 
-    top: 108px;
-    left: 160px;
-    z-index: 2;
-    box-shadow: 0 0 24px 2px rgba(0 ,0 ,0, 0.4);
+}
+/* Container is in flex to get elements stacked on top of each other, position: relative to center in spot */
+.container {
+    height: 100vh;
+    width: 50vw;
+    background: var(--linear-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 200px;
+    border-radius: 15px;
+}
+/* Used the .picture class to provide image space at the top for description */
+.picture {
+    margin-bottom: 88px;
+    border-radius: 15px;
+    height: 354px
 }
 
-.picture, #page{
+
+.picture, .container {
+    margin-right: 10px;
+}
+
+.description {
+    padding: 20px;
+}
+
+h1, h2, h3, h4, p, h6, button {
     position: relative;
-    display: inline-block;
-    top: -520px;
-    left: 376px;
-    z-index: 3;
-}
-
-img {
-    border-radius: 5px 0 0 5px;
-}
-
-#page {
-    width: 360px;
-    height: 540px;
-    position: relative;
-    top: -525px;
-    margin-left: -4px;
-    border-radius: 0 5px  5px 0;
-    background-color: #fff;
+    top: -90px;   
+    text-align: left;
 }
 
 h4 {
-    display: inline;
     font-family: 'Poppins', sans-serif;
     font-weight: 100;
     font-size: 29.38px;
-    margin-left: 10px;
-    position: relative;
-    top: 12px;
-    z-index: 4;
+    margin-bottom: 4px;
 }
 
 h1 {
-    display: inline;
-    width: 386px;
-    height: 216px;
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-    font-size: 50.76px;
-    position: relative;
-    top: 16px;
-    left: 8px
+    font-size: 50.76px;    
 }
 
 p {
-    display: inline-block;
-    width: 324px;
-    height: 128px;
-    font-family:'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
-    font-size:17px;
-    position: relative;
-    top: 18px;
-    left: 8px;
+    font-size: 17px;
+    margin: 10px auto;
 }
 
-h2 {
+h2, h6 {
     display: inline-block;
-    width: 151px;
-    height: 56px;
+    margin-left: 50px;
+}
+
+
+h2 {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 42.3px;
-    position: relative;
-    left: 42px;
+    font-size: 42.3px;   
 }
 
 h6 {
-    display: inline-block;
-    width: 151px;
-    height: 56px;
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-    font-size: 20.4px; 
-    position: relative;
-    left: 64px;   
+    font-size: 20.4px;
 }
 
 button {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 5px;
-    background-color: var(--primary-color);
+    padding: 24px 60px;
+    border-radius: 8px;
+    background: var(--primary-color);
     cursor: pointer;
-    margin-left: 72px;
+    margin-left:  52px;
+    margin-top: 40px;
 }
 
 button:hover {
-    background: linear-gradient(180deg, var(--primary-color) 20%, var(--secondary-color));
-    opacity: 1;
-    transition-duration: 6ms
+    background: var(--primary-color);
+    opacity: .9;
+    transition-delay: .10ms;
 }
 
 span {
@@ -138,7 +122,7 @@ span {
     font-weight: 600;
     color: #fff;
     position: relative;
-    top: -2px
+    top: -4px;
 }
 
 i {
@@ -149,30 +133,64 @@ i {
     top: 2px;
 }
 
-#anchor {
-    display: block;
-    position: relative;
-    top: 32rem;
-    left: 2em;
+
+/* Applies styles to width 890px or greater */
+
+@media (min-width: 890px) {
+    .body-container {
+        display: flex;
+        background: linear-gradient(180deg, 
+        var(--primary-color),
+        var(--linear-color));
+    }
+
+    .container {
+        width: 40vw;
+        height: 32vw;
+        display: flex;
+        flex-direction: row;
+        margin-top: 160px;
+        margin-left: 381px;
+    }
+
+    
+.box-shadow {
+    width: 72%;
+    height: 75vh;
+    background: linear-gradient( to top, var(--secondary-color),
+    rgba(250,250,250,0.1), rgba(250,250,250,0.2));
+    opacity: 0.6;
+    margin-top: 100px;
+    margin-left: 280px;
+    box-shadow: 0 0 24px 2px rgba(0 ,0 ,0, 0.4);
+}
+
+    .picture {
+        width: 440px;
+        height: 100%;
+        margin-left: -30px;
+        border-radius: 15px 0 0 15px;
+    }
+
+    .description {
+        font-size: 14px;
+        display: inline-block;
+        width: 50%;
+    }
+
+    h1, h2, h3, h4, p, h6, button {
+        position: relative;
+        top: 20px;
+    }
+
+    
+h2, h6 {
+    display: inline-block;
+    margin-left: 30px;
 }
 
 
-@media screen and (max-width: 560px) {
-
-     
-
-    .box-shadow {
-        
+    button {
+        margin-left: 26px;
     }
-    
-    section #mobile {
-        background: url(/image-product-mobile.jpg) center cover/cover;
-        z-index: 0;
-    }
-    
-
-    img {
-            display: none;
-        }
-
-    }       
+}
